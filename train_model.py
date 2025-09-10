@@ -25,10 +25,10 @@ def train_and_save_model():
         return None
     
     # Train the model
-    print("\\n🔄 Training machine learning model...")
+    print("\n🔄 Training machine learning model...")
     accuracy, roc_auc = nbfc_system.train_model(df)
     
-    print(f"\\n✅ Model Training Complete!")
+    print(f"\n✅ Model Training Complete!")
     print(f"📊 Model Performance:")
     print(f"   • Accuracy: {accuracy:.4f}")
     print(f"   • ROC-AUC: {roc_auc:.4f}")
@@ -42,14 +42,14 @@ def train_and_save_model():
             'feature_columns': nbfc_system.feature_columns
         }, f)
     
-    print(f"\\n💾 Model saved as '{model_filename}'")
+    print(f"\n💾 Model saved as '{model_filename}'")
     
     return nbfc_system
 
 def demonstrate_conversation_flows():
     """Demonstrate different conversation flows for each persona"""
     
-    print("\\n\\n💬 CONVERSATION FLOW DEMONSTRATIONS")
+    print("\n\n💬 CONVERSATION FLOW DEMONSTRATIONS")
     print("=" * 50)
     
     # Initialize system
@@ -130,7 +130,7 @@ def demonstrate_conversation_flows():
     
     # Demonstrate each conversation flow
     for customer_type, customer_data in customers.items():
-        print(f"\\n\\n🎭 {customer_type.replace('_', ' ').title()} Conversation Flow")
+        print(f"\n\n🎭 {customer_type.replace('_', ' ').title()} Conversation Flow")
         print("-" * 60)
         print(f"Customer Profile: {customer_data['Age']} years old, {customer_data['EmploymentStatus']}, {customer_data['Location']}")
         print(f"Loan: ₹{customer_data['LoanAmount']:,} ({customer_data['LoanType']})")
@@ -155,7 +155,7 @@ def demonstrate_conversation_flows():
 def create_sample_training_data():
     """Create sample training data for demonstration purposes"""
     
-    print("\\n\\n📊 CREATING SAMPLE TRAINING DATA")
+    print("\n\n📊 CREATING SAMPLE TRAINING DATA")
     print("=" * 50)
     
     # Sample conversation data with labels
@@ -193,7 +193,7 @@ def create_sample_training_data():
     ]
     
     sample_df = pd.DataFrame(sample_conversations)
-    sample_df.to_csv('sample_conversation_training_data.csv', index=False)
+    sample_df.to_csv('sample_conversation_training_data.csv', index=False, encoding='utf-8')
     print("✅ Sample conversation training data created: 'sample_conversation_training_data.csv'")
     
     return sample_df
@@ -340,10 +340,10 @@ Open your browser and go to: `http://localhost:8501`
 For technical support, refer to the documentation or contact the development team.
 '''
     
-    with open('DEPLOYMENT_GUIDE.md', 'w') as f:
+    with open('DEPLOYMENT_GUIDE.md', 'w', encoding='utf-8') as f:
         f.write(guide_content)
     
-    print("\\n📋 Deployment guide created: 'DEPLOYMENT_GUIDE.md'")
+    print("\n📋 Deployment guide created: 'DEPLOYMENT_GUIDE.md'")
 
 if __name__ == "__main__":
     # Run all setup functions
@@ -362,11 +362,11 @@ if __name__ == "__main__":
     # Create deployment guide
     create_deployment_guide()
     
-    print("\\n\\n✅ SETUP COMPLETE!")
+    print("\n\n✅ SETUP COMPLETE!")
     print("=" * 60)
     print("🚀 Next Steps:")
     print("1. Review the generated deployment guide")
     print("2. Launch the Streamlit app: streamlit run streamlit_app.py")
     print("3. Test different conversation scenarios")
     print("4. Customize personas and strategies as needed")
-    print("\\n🎯 Your NBFC AI Collection Assistant is ready to use!")
+    print("\n🎯 Your NBFC AI Collection Assistant is ready to use!")
